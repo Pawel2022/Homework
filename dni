@@ -1,0 +1,5 @@
+def xxxx():
+    dni = int(input())
+    return dni*24*60, dni*24*60*60
+
+print(xxxx())
