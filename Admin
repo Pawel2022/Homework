@@ -1,0 +1,101 @@
+math = []
+
+def add_workers():
+    new_dictionary = {}
+    data = input("first name:")
+    new_dictionary["first_name:"] =data if data else " No Data"
+    data = input("surname:")
+    new_dictionary["surname:"] =data if data else " No Data"
+    data = int(input("age:"))
+    new_dictionary["age:"] =data if data else " No Data"
+    users.append(new_dictionary)
+
+
+def edit_workers():
+    for dic in users:
+        inp = input("choose user:")
+        print("e - exit")
+        if dic.get("name") == inp:  
+            while True:
+                print("""
+                1 - remove user
+                2 - edit user
+                """)
+        elif inp == "e":
+            break
+        inp_num= int(input("Podaj liczbe"))
+        if inp_num == 1:
+                    inp = input("name ?")
+                    dic["first_name"] = inp
+        elif inp_num == 2:
+                    inp = input("surname?")
+                    dic["second_name"] = inp
+        elif inp_num == 3:
+                    inp = input("age?")
+                    dic["age"] = int(inp)
+        elif inp_num == 7:
+                    break
+        else:
+            print("There isn't that coment")
+            continue
+
+
+
+
+def grades():
+    while True:
+        ngrade = input("grade:")
+        math.append(ngrade)
+        if ngrade == "stop":
+            break
+        print(math)
+
+
+def ar():
+    sum = 0
+    licznik  = len(math) - 1
+    while (licznik >= 0):
+        sum = sum + math[licznik]
+        licznik -= 1
+    ar = sum/len(math)
+    print(ar)
+
+
+
+
+users = [
+    {
+    "name":"Adam",
+    "surname":"Kowalski",
+    "age":15,
+    # "math": grades()
+    },
+    {
+    "name":"Warol",
+    "surname":"Kojtyła",
+    "age":15,
+    # "math": grades()
+    },
+    {
+    "name":"Janusz",
+    "surname":"Nowak",
+    "age":15,
+    # "math": grades()
+    },
+]
+def see_all(data):
+    for obj in data:
+        for k, v in obj.items():
+            print(f"{k}: {v}")
+        print(f"""\n
+        """)
+
+ch = input("""1-add user
+            2-control
+""")
+if ch == 1:
+    add_workers()
+elif ch == 2:
+    edit_workers()
+
+
